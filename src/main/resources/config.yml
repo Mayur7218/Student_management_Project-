@@ -1,0 +1,24 @@
+server:
+  applicationContextPath: /
+  adminContextPath: /admin
+  applicationConnectors:
+    - type: http
+      port: 8080
+  adminConnectors:
+    - type: http
+      port: 8081
+
+
+
+database:
+  driverClass: com.mysql.cj.jdbc.Driver
+  user: "root"
+  password: "Mayur7218@"
+  url: "jdbc:mysql://localhost:3306/redis_test1"
+  maxSize: 5
+  initialSize: 2
+  minSize: 2
+
+
+redisHost: "localhost"
+redisPort: 6379
