@@ -35,5 +35,6 @@ public class StudentManagementApplication extends Application<StudentManagementC
         // Register Resources
         final StudentDAO studentDAO = jdbi.onDemand(StudentDAO.class);
         environment.jersey().register(new StudentResource(studentDAO, jedisPool));
+        System.out.println("hello boss how are you, Welcome boss!!");
     }
 }
