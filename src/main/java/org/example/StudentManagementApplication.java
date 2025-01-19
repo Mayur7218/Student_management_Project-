@@ -1,8 +1,5 @@
 package org.example;
 
-
-
-
 import io.dropwizard.core.Application;
 import io.dropwizard.core.setup.Bootstrap;
 import io.dropwizard.core.setup.Environment;
@@ -32,8 +29,8 @@ public class StudentManagementApplication extends Application<StudentManagementC
         // Set up Redis
         JedisPool jedisPool = new JedisPool(configuration.getRedisHost(), configuration.getRedisPort());
 
-        // Register Resources
         final StudentDAO studentDAO = jdbi.onDemand(StudentDAO.class);
         environment.jersey().register(new StudentResource(studentDAO, jedisPool));
+        environment.jersey().register(new ExportResource(studentDAO));
     }
 }
